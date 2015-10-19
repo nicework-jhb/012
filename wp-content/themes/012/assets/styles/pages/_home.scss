@@ -1,0 +1,37 @@
+
+.home-title {
+  color: #fff;
+  display: table;
+  height: calc(100vh - 50px);
+  line-height: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0 20%;
+}
+
+.home-title hr {
+  margin: 30px 30% 30px 30%;
+  border: 0;
+  padding: 0;
+  border-top: 5px solid #fff;
+}
+
+.home-title h1 {
+  font-size: 4em;
+}
+
+.text-vertical-center {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.home-title .home-scroll-btn {
+  display: inline-block;
+  margin-top: 30px;
+  color: #fff;
+  &:hover {
+    text-decoration: none;
+  }
+}
