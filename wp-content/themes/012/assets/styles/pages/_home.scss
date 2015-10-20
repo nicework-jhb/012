@@ -8,7 +8,10 @@
   text-transform: uppercase;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  padding: 0 20%;
+  padding: 0 5%;
+  @media screen and (min-width: $screen-md) {
+    padding: 0 10%;
+  }
 }
 
 .home-title hr {
@@ -16,10 +19,6 @@
   border: 0;
   padding: 0;
   border-top: 5px solid #fff;
-}
-
-.home-title h1 {
-  font-size: 4em;
 }
 
 .text-vertical-center {

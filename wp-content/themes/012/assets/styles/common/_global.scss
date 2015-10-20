@@ -11,7 +11,24 @@ body {
 }
 
 .h1, h1 {
-  font-size: 4em;
+  font-size: 2em;
+  @media screen and (min-width: $screen-md) {
+    font-size: 4em;
+  }
+}
+
+.h2, h2 {
+  font-size: 1.4em;
+  @media screen and (min-width: $screen-md) {
+    font-size: 2.4em;
+  }
+}
+
+.h3, h3 {
+  font-size: 1.2em;
+  @media screen and (min-width: $screen-md) {
+    font-size: 2.2em;
+  }
 }
 
 .h1.title, h1.title {

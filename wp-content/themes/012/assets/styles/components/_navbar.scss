@@ -12,7 +12,34 @@
   background-color: #fff;
 }
 
+.navbar-012 .brand {
+  margin-left: 10px;
+  @media screen and (min-width: $screen-sm) {
+    margin-left: 0;
+  }
+}
+
+.navbar-012 .navbar-toggle + .brand img {
+  @media screen and (max-width: $screen-sm) {
+    width: 60px;
+    top: 10px;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+  }
+}
+
+.navbar-012 .navbar-toggle.collapsed + .brand img {
+  @media screen and (max-width: $screen-sm) {
+    width: 120px;
+    top: 25px;
+    -webkit-transition-delay: 0.3s; /* Safari */
+    transition-delay: 0.3s;
+  }
+}
+
 .navbar-012 .navbar-nav {
+  margin-top: 0;
+  margin-bottom: 0;
   @media screen and (min-width: $screen-sm) {
     margin-left: 140px;
   }
