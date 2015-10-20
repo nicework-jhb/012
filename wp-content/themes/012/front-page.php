@@ -20,17 +20,20 @@ query_posts($args);
 
 <div class="container-fluid" style="background-color: #fff;">
   <div class="container" id="spaces">
+    <h1 class="title">Spaces</h1>
     <?php if (!have_posts()) : ?>
       <div class="alert alert-warning">
         <?php _e('Sorry, no results were found.', 'sage'); ?>
       </div>
       <?php get_search_form(); ?>
     <?php endif; ?>
-
+    <div class="row">
     <?php while (have_posts()) : the_post(); ?>
-      <?php get_template_part('templates/content', get_post_type() != 'post' ? get_post_type() : get_post_format()); ?>
+      <div class="col-md-4 thumbnail-block">
+        <?php get_template_part('templates/content', get_post_type() != 'post' ? get_post_type() : get_post_format()); ?>
+      </div>
     <?php endwhile; ?>
-
+    </div>
     <?php the_posts_navigation(); ?>
 
     <?php $homepageID = get_option('page_on_front'); ?>
