@@ -1,15 +1,60 @@
 <?php while (have_posts()) : the_post(); ?>
-  <article <?php post_class(); ?>>
-    <header>
-      <h1 class="entry-title"><?php the_title(); ?></h1>
-      <?php get_template_part('templates/entry-meta'); ?>
-    </header>
-    <div class="entry-content">
-      <?php the_content(); ?>
+  <div class="post__featured-image">
+    <?php
+    if (has_post_thumbnail()) {
+
+      $thumbnail_url = wp_get_attachment_image_src(get_post_thumbnail_id(), 'large');
+      ?>
+      <img src="<?php echo $thumbnail_url[0] ?>" alt="<?php echo the_title_attribute('echo=0'); ?>" />
+      <?php
+    }
+    ?>
+  </div>
+
+  <div class="content-single container-fluid">
+    <div class="container">
+      <article <?php post_class(); ?>>
+        <header>
+          <h1 class="title"><?php the_title(); ?></h1>
+        </header>
+        <div class="entry-content">
+          <?php the_content(); ?>
+          <?php
+          $thumbnails = explode(',', types_render_field("image",
+              array(
+                  "size"=>"thumbnail",
+                  "output"=> "normal",
+                  "class"=>"img-responsive",
+                  "separator"=>","
+              )));
+          $fullUrl = explode(',', types_render_field("image",
+              array(
+                  "resize"=>"crop",
+                  "width"=>"640",
+                  "height"=>"300",
+                  "output"=> "raw",
+                  "separator"=>","
+              )));
+          ?>
+          <?php if (!empty($thumbnails)) { ?>
+            <h4>Gallery</h4>
+            <div class="ps-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+              <?php $key = 0; ?>
+              <?php foreach ($thumbnails as $image) { ?>
+                <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                  <a href="<?php echo $fullUrl[$key]; ?>" itemprop="contentUrl" data-size="">
+                    <?php echo explode('/>', $image)[0] . 'itemprop="thumbnail" data-image-url="' . $fullUrl[$key] . '" />'; ?></a>
+                </figure>
+                <?php $key++; ?>
+              <?php } ?>
+            </div>
+          <?php } ?>
+        </div>
+        <footer>
+          <?php wp_link_pages(['before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']); ?>
+        </footer>
+        <?php comments_template('/templates/comments.php'); ?>
+      </article>
     </div>
-    <footer>
-      <?php wp_link_pages(['before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']); ?>
-    </footer>
-    <?php comments_template('/templates/comments.php'); ?>
-  </article>
+  </div>
 <?php endwhile; ?>

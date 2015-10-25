@@ -6,6 +6,7 @@
 @import "../../bower_components/font-awesome/scss/font-awesome.scss";
 // endbower
 
+@import "common/_mixins";
 @import "common/_global";
 @import "components/_buttons";
 @import "components/_comments";
@@ -24,3 +25,5 @@
 @import "pages/_home.scss";
 
 @import "components/_instagram-plugin-overrides";
+@import "components/_twitter";
+@import "components/_slick";

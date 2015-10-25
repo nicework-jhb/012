@@ -9,7 +9,9 @@
   "dependencies": {
     "bootstrap-sass": "3.3.5",
     "jquery-backstretch": "~2.0.4",
-    "font-awesome": "~4.4.0"
+    "font-awesome": "~4.4.0",
+    "photoswipe": "~4.1.0",
+    "slick-carousel": "~1.5.8"
   },
   "overrides": {
     "bootstrap-sass": {
@@ -38,6 +40,13 @@
       "main": [
         "./scss/font-awesome.scss",
         "./fonts/*"
+      ]
+    },
+    "slick-carousel": {
+      "main": [
+        "slick/slick.min.js",
+        "slick/slick.css",
+        "slick/fonts/*"
       ]
     }
   }

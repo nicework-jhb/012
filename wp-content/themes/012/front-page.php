@@ -18,7 +18,7 @@ $args = [
 query_posts($args);
 ?>
 
-<div class="container-fluid" style="background-color: #fff;">
+<div class="container-fluid main-content">
   <div class="container" id="spaces">
     <h1 class="title">Spaces</h1>
     <?php if (!have_posts()) : ?>
@@ -27,13 +27,22 @@ query_posts($args);
       </div>
       <?php get_search_form(); ?>
     <?php endif; ?>
-    <div class="row">
-    <?php while (have_posts()) : the_post(); ?>
-      <div class="col-md-4 thumbnail-block">
-        <?php get_template_part('templates/content', get_post_type() != 'post' ? get_post_type() : get_post_format()); ?>
-      </div>
-    <?php endwhile; ?>
-    </div>
+      <?php $colCount = 0; ?>
+      <?php while (have_posts()) : the_post(); ?>
+        <?php if ($colCount % 3 == 0) { ?>
+          <div class="row">
+        <?php } ?>
+        <?php $colCount++; ?>
+        <div class="col-md-4 thumbnail-block">
+          <?php get_template_part('templates/content', get_post_type() != 'post' ? get_post_type() : get_post_format()); ?>
+        </div>
+        <?php if ($colCount % 3 == 0) { ?>
+            </div>
+        <?php } ?>
+      <?php endwhile; ?>
+      <?php if ($colCount % 3 != 0) { ?>
+        </div>
+      <?php } ?>
     <?php the_posts_navigation(); ?>
 
     <?php $homepageID = get_option('page_on_front'); ?>

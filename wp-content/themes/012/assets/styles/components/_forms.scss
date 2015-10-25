@@ -13,3 +13,31 @@
   @extend .btn;
   @extend .btn-default;
 }
+
+.newsletter-form {
+  margin-bottom: 30px;
+}
+
+.newsletter-form .form-control {
+  border-radius: 0;
+  height: auto;
+  padding: 4px 12px;
+  border-color: #fff;
+}
+
+.newsletter-form .form-group {
+  float: left;
+  width: 60%;
+  @media screen and (min-width: $screen-xs) {
+    width: 70%;
+  }
+}
+
+.newsletter-form button {
+  float: left;
+  width: 40%;
+  padding: 2px;
+  @media screen and (min-width: $screen-xs) {
+    width: 30%;
+  }
+}

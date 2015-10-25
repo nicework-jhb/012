@@ -76,6 +76,7 @@ function init_custom_post_types() {
     'taxonomies' => array( 'post_tag', 'category' ),
     'exclude_from_search' => false,
     'capability_type' => 'post',
+    'show_in_nav_menus' => true,
     'rewrite' => array( 'slug' => 'spaces' )
     ]);
 
@@ -87,6 +88,7 @@ function init_custom_post_types() {
     'taxonomies' => array( 'post_tag', 'category' ),
     'exclude_from_search' => false,
     'capability_type' => 'post',
+    'show_in_nav_menus' => true,
     'rewrite' => array( 'slug' => 'events' )
     ]);
 }
@@ -164,3 +166,45 @@ function assets() {
   wp_enqueue_script('sage/js', Assets\asset_path('scripts/main.js'), ['jquery'], null, true);
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);
+
+function theme012_customize_register( $wp_customize ) {
+  //All our sections, settings, and controls will be added here
+  $wp_customize->add_section( 'theme012_social_links' , array(
+      'title'      => __( 'Social Links', 'theme012' ),
+      'priority'   => 30,
+  ) );
+
+  $wp_customize->add_setting( 'twitter' , array(
+      'default'     => 'http://www.twitter.com/',
+      'transport'   => 'refresh',
+  ));
+
+  $wp_customize->add_control('twitter_link', array(
+      'label'        => __( 'Twitter Link', 'theme012' ),
+      'section'    => 'theme012_social_links',
+      'settings'   => 'twitter',
+  ));
+
+  $wp_customize->add_setting( 'facebook' , array(
+      'default'     => 'http://www.facebook.com/',
+      'transport'   => 'refresh',
+  ));
+
+  $wp_customize->add_control('facebook_link', array(
+      'label'        => __( 'Facebook Link', 'theme012' ),
+      'section'    => 'theme012_social_links',
+      'settings'   => 'facebook',
+  ));
+
+  $wp_customize->add_setting( 'instagram' , array(
+      'default'     => 'http://www.instagram.com/',
+      'transport'   => 'refresh',
+  ));
+
+  $wp_customize->add_control('instagram_link', array(
+      'label'        => __( 'Instagram Link', 'theme012' ),
+      'section'    => 'theme012_social_links',
+      'settings'   => 'instagram',
+  ));
+}
+add_action( 'customize_register', __NAMESPACE__ . '\\theme012_customize_register' );

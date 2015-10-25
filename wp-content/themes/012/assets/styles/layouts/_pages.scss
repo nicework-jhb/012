@@ -1,3 +1,8 @@
+.main-content {
+  background-color: #fff;
+  padding-bottom: 20px;
+}
+
 #spaces {
   .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
     color: $red-012;
@@ -10,6 +15,11 @@
 
 .thumbnail-block article header {
   position: relative;
+  margin-bottom: 30px;
+}
+
+.thumbnail-block article header img {
+  width: 100%;
 }
 
 .thumbnail-block article header .thumbnail-title {
@@ -21,7 +31,9 @@
   left: 2%;
   text-align: right;
   padding-right: 50px;
+  padding-top: 10px;
   overflow: hidden;
+  line-height: normal;
 }
 
 .thumbnail-block article header .thumbnail-title:before,
@@ -48,9 +60,12 @@
   font-weight: 900;
   text-transform: uppercase;
   font-size: 1.4em;
+  white-space: nowrap;
 }
 
-.thumbnail-block article header .thumbnail-title a:hover {
+.thumbnail-block article header .thumbnail-title a:hover,
+.thumbnail-block article header .thumbnail-title a:focus,
+.thumbnail-block article header .thumbnail-title a:active {
   text-decoration: none;
 }
 
@@ -71,4 +86,34 @@
 .thumbnail-block article header .thumbnail-title a:after {
   left: 100%;
   margin-left: 15px;
+}
+
+.entry-summary {
+  margin-bottom: 30px;
+  min-height: 60px;
+}
+
+.entry-link {
+  margin-bottom: 30px;
+}
+
+.hentry p {
+  margin-bottom: 30px;
+}
+
+.hentry ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 30px;
+}
+
+.hentry ul li {
+  margin: 0 0 1em 0;
+}
+
+.hentry ul li:before {
+  font-family: FontAwesome;
+  content: '\f054';
+  color: $red-012;
+  margin-right: 20px;
 }

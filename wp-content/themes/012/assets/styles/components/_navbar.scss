@@ -1,3 +1,15 @@
+@mixin navbar-color-custom($color, $offset, $opacity) {
+  a {
+    background-color: $color;
+    &:hover {
+    background-color: lighten($color, $offset);
+    }
+  }
+  .sub-menu {
+    background-color: rgba($color, $opacity);
+  }
+}
+
 .navbar-012 {
   background-color: $blue-012;
   border-radius: 0;
@@ -6,6 +18,12 @@
   border: 0;
   font-weight: 500;
   text-transform: uppercase;
+}
+
+.navbar-012 .container-fluid {
+  @media screen and (min-width: $screen-sm) {
+    padding: 0;
+  }
 }
 
 .navbar-012 .navbar-toggle .icon-bar {
@@ -20,6 +38,7 @@
 }
 
 .navbar-012 .navbar-toggle + .brand img {
+  left: 10px;
   @media screen and (max-width: $screen-sm) {
     width: 60px;
     top: 10px;
@@ -37,19 +56,55 @@
   }
 }
 
-.navbar-012 .navbar-nav {
-  margin-top: 0;
-  margin-bottom: 0;
+.navbar-012 .navbar-collapse {
   @media screen and (min-width: $screen-sm) {
-    margin-left: 140px;
+    padding: 0;
   }
 }
 
-.navbar-012 .navbar-nav > li > a {
-  color: #ffffff;
-
+.navbar-012 .menu-primary-navigation-container {
   @media screen and (min-width: $screen-sm) {
-    padding: 15px 40px;
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    padding-left: 140px;
+  }
+}
+
+.navbar-012 .navbar-nav {
+  background-color: #333;
+  margin-top: 0;
+  margin-bottom: 0;
+  @media screen and (min-width: $screen-sm) {
+    width: 100%;
+    display: table-row;
+    float: none;
+    &:before, &:after {
+      content: normal;
+    }
+  }
+}
+
+.navbar-012 .navbar-nav li {
+  @media screen and (min-width: $screen-sm) {
+    display: table-cell;
+    text-align: center;
+    float: none;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.navbar-012 .navbar-nav li > a {
+  color: #ffffff;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  @media screen and (min-width: $screen-sm) {
+    padding: 15px 5px;
   }
 }
 
@@ -58,9 +113,69 @@
   top: 25px;
 }
 
-.navbar-012 .navbar-nav li:nth-child(5n+1) a { background-color: $orange-012; }
-.navbar-012 .navbar-nav li:nth-child(5n+2) a { background-color: $red-012; }
-.navbar-012 .navbar-nav li:nth-child(5n+3) a { background-color: $turquoise-012; }
-.navbar-012 .navbar-nav li:nth-child(5n+4) a { background-color: $green-012; }
-.navbar-012 .navbar-nav li:nth-child(5n+5) a { background-color: $yellow-012; }
-.navbar-012 .navbar-nav li:last-child a { background-color: $blue-012; }
+.navbar-012 .navbar-nav > li:nth-child(5n+1) {
+  @include navbar-color-custom($orange-012, 5%, 0.2);
+}
+
+.navbar-012 .navbar-nav > li:nth-child(5n+2) {
+  @include navbar-color-custom($red-012, 5%, 0.2);
+}
+
+.navbar-012 .navbar-nav > li:nth-child(5n+3) {
+  @include navbar-color-custom($turquoise-012, 5%, 0.2);
+}
+
+.navbar-012 .navbar-nav > li:nth-child(5n+4) {
+  @include navbar-color-custom($green-012, 5%, 0.2);
+}
+
+.navbar-012 .navbar-nav > li:nth-child(5n+5) {
+  @include navbar-color-custom($yellow-012, 5%, 0.2);
+}
+
+.navbar-012 .navbar-nav > li:last-child {
+  @include navbar-color-custom($blue-012, 5%, 0.2);
+}
+
+.navbar-012 .sub-menu {
+  margin: 0;
+  padding: 0;
+  @media screen and (min-width: $screen-sm) {
+    display: none;
+    list-style: none;
+    padding: 20px 0 0 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 400px;
+  }
+}
+
+.current-menu-parent .sub-menu,
+.current-menu-item .sub-menu {
+  display: block;
+}
+
+.navbar-012 .sub-menu li {
+  display: block;
+}
+
+.navbar-012 .sub-menu li a {
+  padding: 15px 15px 15px 30px;
+  background-color: transparent !important;
+  @media screen and (min-width: $screen-sm) {
+    display: block;
+    padding: 5px 10px;
+    text-align: center;
+  }
+  &:hover {
+    text-decoration: none;
+    background-color: rgba(#fff, 0.2) !important;
+  }
+}
+
+.navbar-012 .sub-menu li.current-menu-item a {
+  font-weight: 900;
+
+}

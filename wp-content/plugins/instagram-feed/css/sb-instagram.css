@@ -83,6 +83,7 @@
 }
 #sb_instagram .sbi_photo{
   display: block;
+  text-decoration: none;
 }
 #sb_instagram a,
 #sb_instagram a:hover,

@@ -28,6 +28,12 @@ add_filter('body_class', __NAMESPACE__ . '\\body_class');
  * Clean up the_excerpt()
  */
 function excerpt_more() {
-  return ' &hellip; <a href="' . get_permalink() . '">' . __('Continued', 'sage') . '</a>';
+  return '...';
 }
 add_filter('excerpt_more', __NAMESPACE__ . '\\excerpt_more');
+
+function custom_excerpt_length( $length ) {
+  return 18;
+}
+
+add_filter( 'excerpt_length', __NAMESPACE__ . '\\custom_excerpt_length', 999 );
