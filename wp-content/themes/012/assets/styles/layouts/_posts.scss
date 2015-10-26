@@ -6,3 +6,17 @@
     width: 100%;
   }
 }
+
+.ps-gallery {
+  margin-bottom: 30px;
+}
+
+.single-space {
+  .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    color: $red-012;
+  }
+
+  .btn-012 {
+    background-color: $red-012;
+  }
+}

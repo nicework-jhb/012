@@ -1,3 +1,12 @@
+.slick-slider {
+  margin: 0 0 30px 0;
+}
+
+.slick-slide {
+  padding: 0 5px;
+  outline: none;
+}
+
 .slick-next, .slick-prev {
   font-size: 0;
   line-height: 0;
@@ -6,7 +15,6 @@
   display: block;
   width: 40px;
   height: 100%;
-  margin-top: 0;
   padding: 0;
   cursor: pointer;
   color: transparent;
@@ -33,14 +41,14 @@
 }
 
 .slick-next {
-  right: 0;
+  right: 5px;
   &:before {
     content: '\f054';
   }
 }
 
 .slick-prev {
-  left: 0;
+  left: 5px;
   z-index: 1;
   &:before {
     content: '\f053';
@@ -57,4 +65,3 @@
     background-color: rgba(#333, 0.3);
   }
 }
-
