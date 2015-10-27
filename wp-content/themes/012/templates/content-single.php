@@ -5,7 +5,7 @@
 
       $thumbnail_url = wp_get_attachment_image_src(get_post_thumbnail_id(), 'large');
       ?>
-      <img src="<?php echo $thumbnail_url[0] ?>" alt="<?php echo the_title_attribute('echo=0'); ?>" />
+      <img src="<?php echo $thumbnail_url[0] ?>" alt="<?php echo the_title_attribute('echo=0'); ?>"/>
       <?php
     }
     ?>
@@ -13,47 +13,56 @@
 
   <div class="content-single container-fluid">
     <div class="container">
-      <article <?php post_class(); ?>>
-        <header>
-          <h1 class="title"><?php the_title(); ?></h1>
-        </header>
-        <div class="entry-content">
-          <?php the_content(); ?>
-          <?php
-          $thumbnails = explode(',', types_render_field("image",
-              array(
-                  "size"=>"thumbnail",
-                  "output"=> "normal",
-                  "class"=>"img-responsive",
-                  "separator"=>","
-              )));
-          $fullUrl = explode(',', types_render_field("image",
-              array(
-                  "resize"=>"crop",
-                  "width"=>"640",
-                  "height"=>"300",
-                  "output"=> "raw",
-                  "separator"=>","
-              )));
-          ?>
-          <?php if (!empty($thumbnails)) { ?>
-            <h4>Gallery</h4>
-            <div class="ps-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-              <?php $key = 0; ?>
-              <?php foreach ($thumbnails as $image) { ?>
-                <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                  <a href="<?php echo $fullUrl[$key]; ?>" itemprop="contentUrl" data-size="">
-                    <?php echo explode('/>', $image)[0] . 'itemprop="thumbnail" data-image-url="' . $fullUrl[$key] . '" />'; ?></a>
-                </figure>
-                <?php $key++; ?>
-              <?php } ?>
+      <header>
+        <h1 class="title"><?php the_title(); ?></h1>
+      </header>
+      <div class="row">
+        <div class="col-md-8">
+          <article <?php post_class(); ?>>
+            <div class="entry-content">
+              <?php the_content(); ?>
             </div>
+        </div>
+        <div class="col-md-4">
+          <p>Sidebar</p>
+        </div>
+      </div>
+      <?php
+      $thumbnails = types_render_field("image",
+          array(
+              "size" => "thumbnail",
+              "output" => "normal",
+              "class" => "img-responsive",
+              "separator" => ","
+          ));
+      $thumbnailArray = explode(',', $thumbnails);
+      $fullUrls = types_render_field("image",
+          array(
+              "resize" => "crop",
+              "width" => "640",
+              "height" => "300",
+              "output" => "raw",
+              "separator" => ","
+          ));
+      $fullUrlsArray = explode(',', $fullUrls);
+      ?>
+      <?php if (!empty($thumbnails)) { ?>
+        <h4>Gallery</h4>
+        <div class="ps-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+          <?php $key = 0; ?>
+          <?php foreach ($thumbnailArray as $image) { ?>
+            <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+              <a href="<?php echo $fullUrlsArray[$key]; ?>" itemprop="contentUrl" data-size="">
+                <?php echo explode('/>', $image)[0] . 'itemprop="thumbnail" data-image-url="' . $fullUrlsArray[$key] . '" />'; ?></a>
+            </figure>
+            <?php $key++; ?>
           <?php } ?>
         </div>
-        <footer>
-          <?php wp_link_pages(['before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']); ?>
-        </footer>
-        <?php comments_template('/templates/comments.php'); ?>
+      <?php } ?>
+      <footer>
+        <?php wp_link_pages(['before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']); ?>
+      </footer>
+      <?php comments_template('/templates/comments.php'); ?>
       </article>
     </div>
   </div>

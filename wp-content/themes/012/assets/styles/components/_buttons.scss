@@ -13,3 +13,21 @@
     background-color: lighten($red-012, 5%);
   }
 }
+
+#spaces {
+  .btn-012 {
+    background-color: $red-012;
+    &:hover {
+      background-color: lighten($red-012, 5%);
+    }
+  }
+}
+
+#events {
+  .btn-012 {
+    background-color: $turquoise-012;
+    &:hover {
+      background-color: lighten($turquoise-012, 5%);
+    }
+  }
+}

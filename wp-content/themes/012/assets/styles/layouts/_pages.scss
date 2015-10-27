@@ -3,16 +3,6 @@
   padding-bottom: 20px;
 }
 
-#spaces {
-  .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
-    color: $red-012;
-  }
-
-  a {
-    color: $red-012;
-  }
-}
-
 .thumbnail-block article header {
   position: relative;
   margin-bottom: 30px;
@@ -117,3 +107,8 @@
   color: $red-012;
   margin-right: 20px;
 }
+
+//custom page colours
+#about { .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6, a, .hentry ul li:before { color: $orange-012; } }
+#spaces { .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6, a, .hentry ul li:before { color: $red-012; } }
+#events { .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6, a, .hentry ul li:before { color: $turquoise-012; } }

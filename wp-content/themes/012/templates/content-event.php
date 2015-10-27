@@ -1,6 +1,5 @@
 <article <?php post_class(); ?>>
   <header>
-    <span class="thumbnail-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></span>
     <?php
     if ( has_post_thumbnail() ) {
       $thumbnail_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'thumbnail' );
@@ -15,7 +14,9 @@
     ?>
   </header>
   <div class="entry-summary">
-    <?php the_excerpt();  ?>
+    <h5><?php the_title(); ?></h5>
+    <h5><?php echo types_render_field("date", array()); ?></h5>
+    <?php the_content();  ?>
   </div>
   <div class="entry-link">
     <a href="<?php the_permalink(); ?>" class="btn btn-012 pull-right">More</a>
