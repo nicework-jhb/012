@@ -108,7 +108,23 @@
   margin-right: 20px;
 }
 
+.contact-form {
+  color: #fff;
+  background-color: $yellow-012;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.contact-form h5 {
+  color: #fff!important;
+}
+
+#contact .google-maps {
+  margin-bottom: 30px;
+}
+
 //custom page colours
 #about { .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6, a, .hentry ul li:before { color: $orange-012; } }
 #spaces { .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6, a, .hentry ul li:before { color: $red-012; } }
 #events { .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6, a, .hentry ul li:before { color: $turquoise-012; } }
+#contact { .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6, a, .hentry ul li:before { color: $yellow-012; } }

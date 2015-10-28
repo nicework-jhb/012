@@ -56,7 +56,7 @@
 }
 
 .slick-disabled {
-  background-color: rgba(#333, 0.3);
+  background-color: rgba(#333, 0.3) !important;
   &:before {
     color: rgba(#fff, 0.4);
   }
@@ -64,4 +64,29 @@
     cursor: default;
     background-color: rgba(#333, 0.3);
   }
+}
+
+//overrides for friends slider on about page
+.slick-friends.slick-slider {
+  margin: 0 40px;
+}
+
+.slick-friends .slick-slide {
+  padding: 0 10px;
+}
+
+.slick-friends .slick-next,
+.slick-friends .slick-prev {
+  background-color: rgba($orange-012, 1);
+  &:hover {
+    background-color: rgba($orange-012, 0.8);
+  }
+}
+
+.slick-friends .slick-next {
+  right: -40px;
+}
+
+.slick-friends .slick-prev {
+  left: -40px;
 }

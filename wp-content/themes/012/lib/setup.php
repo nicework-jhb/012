@@ -91,6 +91,18 @@ function init_custom_post_types() {
     'show_in_nav_menus' => true,
     'rewrite' => array( 'slug' => 'events' )
     ]);
+
+  register_post_type('friend', [
+      'labels' => get_custom_post_labels('Friend'),
+      'has_archive' => false,
+      'public' => true,
+      'supports' => array( 'title', 'editor', 'excerpt', 'custom-fields', 'thumbnail', 'page-attributes' ),
+      'taxonomies' => array( 'post_tag', 'category' ),
+      'exclude_from_search' => true,
+      'capability_type' => 'post',
+      'show_in_nav_menus' => true,
+      'rewrite' => array( 'slug' => 'friends' )
+  ]);
 }
 add_action('init', __NAMESPACE__ . '\\init_custom_post_types');
 
@@ -132,6 +144,15 @@ function widgets_init() {
       'after_widget'  => '</section>',
       'before_title'  => '<h3>',
       'after_title'   => '</h3>'
+  ]);
+
+  register_sidebar([
+      'name'          => __('Event Sidebar', 'sage'),
+      'id'            => 'event-sidebar',
+      'before_widget' => '<section class="widget %1$s %2$s"><p>',
+      'after_widget'  => '</p></section>',
+      'before_title'  => '<h4>',
+      'after_title'   => '</h4>'
   ]);
 }
 add_action('widgets_init', __NAMESPACE__ . '\\widgets_init');
@@ -208,3 +229,16 @@ function theme012_customize_register( $wp_customize ) {
   ));
 }
 add_action( 'customize_register', __NAMESPACE__ . '\\theme012_customize_register' );
+
+// hide about page map box on all pages except about page
+function custom_admin_styles() {
+  $about = array(18);
+  $contact = array(23);
+
+  if (get_post_type() == 'page' && !in_array(get_the_ID(), $about)) {   //* about page
+    echo '<style type="text/css"> #wpcf-group-about-page-map {display:none;} </style>';
+  } else if (get_post_type() == 'page' && !in_array(get_the_ID(), $contact)) {   //* about page
+    echo '<style type="text/css"> #wpcf-group-contact-information {display:none;} </style>';
+  }
+}
+add_action('admin_head', __NAMESPACE__ . '\\custom_admin_styles');

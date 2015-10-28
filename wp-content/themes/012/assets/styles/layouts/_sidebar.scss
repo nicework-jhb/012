@@ -1,0 +1,21 @@
+.enquire-block {
+  float: right;
+  background-color: $red-012;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  max-width: 160px;
+  h5 {
+    color: #fff !important;
+  }
+}
+
+.event-sidebar {
+  background-color: $turquoise-012;
+  color: #fff;
+  padding: 20px;
+  margin-bottom: 30px;
+  h4 {
+    color: #fff !important;
+  }
+}

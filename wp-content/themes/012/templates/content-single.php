@@ -5,7 +5,7 @@
 
       $thumbnail_url = wp_get_attachment_image_src(get_post_thumbnail_id(), 'large');
       ?>
-      <img src="<?php echo $thumbnail_url[0] ?>" alt="<?php echo the_title_attribute('echo=0'); ?>"/>
+    <div class="image-container"><img src="<?php echo $thumbnail_url[0] ?>" alt="<?php echo the_title_attribute('echo=0'); ?>"/></div>
       <?php
     }
     ?>

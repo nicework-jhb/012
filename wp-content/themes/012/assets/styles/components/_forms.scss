@@ -1,3 +1,10 @@
+.form-control {
+  border-radius: 0;
+  border-color: #fff;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
 // Search form
 .search-form {
   @extend .form-inline;
@@ -40,4 +47,38 @@
   @media screen and (min-width: $screen-xs) {
     width: 30%;
   }
+}
+
+//contact form 7 styles
+.wpcf7-response-output {
+  // wpcf7-display-none wpcf7-mail-sent-ok
+  border: none !important;
+  padding: 10px !important;
+  background-color: $red-012;
+  &:before {
+    font-family: FontAwesome;
+    content: '\f071';
+    margin-right: 6px;
+  }
+}
+
+.wpcf7-response-output.wpcf7-mail-sent-ok {
+  background-color: $green-012;
+  &:before {
+    font-family: FontAwesome;
+    content: '\f00c';
+    margin-right: 6px;
+  }
+}
+
+.wpcf7-not-valid {
+  //border-color: $red-012;
+}
+
+.wpcf7-not-valid-tip {
+  color: #fff !important;
+  padding: 2px 13px;
+  background-color: $red-012;
+  font-weight: normal;
+  font-size: 0.8em !important;
 }

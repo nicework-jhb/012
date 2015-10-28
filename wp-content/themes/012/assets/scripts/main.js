@@ -242,7 +242,41 @@
         $('.ps-gallery').slick({
           infinite: false,
           slidesToShow: 3,
-          slidesToScroll: 1
+          slidesToScroll: 1,
+          responsive: [
+            {
+              breakpoint: 991,
+              settings: {
+                slidesToShow: 2
+              }
+            },
+            {
+              breakpoint: 480,
+              settings: {
+                slidesToShow: 1
+              }
+            }
+          ]
+        });
+
+        $('.slick-friends').slick({
+          infinite: false,
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          responsive: [
+            {
+              breakpoint: 991,
+              settings: {
+                slidesToShow: 2
+              }
+            },
+            {
+              breakpoint: 480,
+              settings: {
+                slidesToShow: 1
+              }
+            }
+          ]
         });
       }
     },

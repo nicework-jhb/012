@@ -1,10 +1,39 @@
 .post__featured-image {
+  position: relative;
   width: 100%;
-  max-height: 400px;
+  max-height: 470px;
   overflow: hidden;
-  img {
-    width: 100%;
+  .image-container {
+    position: relative;
+    padding-bottom: 40%;
+    overflow: hidden;
+    img {
+      position: absolute;
+      top: -50%;
+      bottom: -50%;
+      margin: auto;
+      width: 100%;
+      height: auto;
+    }
   }
+}
+
+.post__featured-image-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 30px;
+  text-align: center;
+  color: #fff;
+  h2 {
+    color: #fff !important;
+  }
+}
+
+.content-single {
+  position: relative;
+  z-index: 2;
 }
 
 .ps-gallery {
@@ -20,3 +49,15 @@
     background-color: $red-012;
   }
 }
+
+.thumbnail-block {
+  margin-bottom: 30px;
+}
+
+.event-fb-link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 3em;
+}
+

@@ -23,11 +23,7 @@
   }
 }
 
-#events {
-  .btn-012 {
-    background-color: $turquoise-012;
-    &:hover {
-      background-color: lighten($turquoise-012, 5%);
-    }
-  }
-}
+#about { .btn-012 { background-color: $orange-012; &:hover { background-color: lighten($orange-012, 5%); } } }
+#spaces { .btn-012 { background-color: $red-012; &:hover { background-color: lighten($red-012, 5%); } } }
+#events { .btn-012 { background-color: $turquoise-012; &:hover { background-color: lighten($turquoise-012, 5%); } } }
+#contact { .btn-012 { background-color: $yellow-012; &:hover { background-color: lighten($yellow-012, 5%); } } }
