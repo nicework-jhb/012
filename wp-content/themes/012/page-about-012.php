@@ -11,6 +11,7 @@
         <?php
       }
       ?>
+      <div class="fim-block"></div>
     </div>
     <div class="content-single container-fluid">
       <div class="container">

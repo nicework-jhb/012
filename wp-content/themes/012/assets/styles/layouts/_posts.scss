@@ -18,6 +18,33 @@
   }
 }
 
+.post__featured-image .fim-block {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  @media screen and (max-width: $screen-sm) {
+    background: rgba(#000, 0.2) !important;
+  }
+}
+
+.post__featured-image .fim-block:before,
+.post__featured-image .fim-block:after {
+  content: '';
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background-color: rgba(#000, 0.2);
+  width: 9999px;
+}
+
+.post__featured-image .fim-block:before {
+  right: 100%;
+}
+
+.post__featured-image .fim-block:after {
+  left: 100%;
+}
+
 .post__featured-image-text {
   position: absolute;
   bottom: 0;

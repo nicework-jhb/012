@@ -18,7 +18,7 @@
     <h5><?php echo types_render_field("date", array()); ?></h5>
     <?php the_content();  ?>
   </div>
-  <div class="entry-link">
+  <div class="entry-link clearfix">
     <a href="<?php the_permalink(); ?>" class="btn btn-012 pull-right">More</a>
   </div>
 </article>

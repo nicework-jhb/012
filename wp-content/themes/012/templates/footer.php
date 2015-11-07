@@ -42,11 +42,7 @@
           <?php dynamic_sidebar('sidebar-footer-newsletter'); ?>
         </div>
         <div class="newsletter-form clearfix">
-          <form class="form">
-            <?php if (function_exists('mc4wp_form')) {
-              mc4wp_form();
-            } ?>
-          </form>
+            <?php echo do_shortcode('[contact-form-7 id="118" title="Newsletter Signup"]'); ?>
         </div>
         <div class="social-links">
           <a href="<?php echo get_theme_mod('twitter'); ?>" class="social-links--twitter"><i
@@ -64,13 +60,18 @@
       <div class="col-md-10">
         <div class="footer-disclaimer__content">
           <div class="footer-disclaimer__content-text">
-            <span class="nowrap">Copyright &copy; <?php echo date("Y") ?> 012 Central, All rights reserved</span> <span
-                class="nowrap"><i class="fa fa-circle fa-fw"></i> 385 Helen Joseph Street. Pretoria.</span>
-            <ul class="footer-disclaimer__nav">
-              <li><a href="">Privacy</a></li>
-              <li><a href="">Terms of use</a></li>
-              <li><a href="">Cookie policy</a></li>
-            </ul>
+            <span class="nowrap">Copyright &copy; <?php echo date("Y") ?> - <?php echo get_theme_mod('copyright'); ?></span> <span
+                class="nowrap"><i class="fa fa-circle fa-fw"></i> <?php echo get_theme_mod('address'); ?></span>
+            <?php
+            if (has_nav_menu('footer_navigation')) :
+              wp_nav_menu(['theme_location' => 'footer_navigation', 'menu_class' => 'footer-disclaimer__nav']);
+            endif;
+            ?>
+<!--            <ul class="footer-disclaimer__nav">-->
+<!--              <li><a href="">Privacy</a></li>-->
+<!--              <li><a href="">Terms of use</a></li>-->
+<!--              <li><a href="">Cookie policy</a></li>-->
+<!--            </ul>-->
           </div>
         </div>
       </div>

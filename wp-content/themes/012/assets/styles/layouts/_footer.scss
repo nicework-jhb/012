@@ -101,6 +101,10 @@ footer a:focus {
   font-size: 0.7em;
 }
 
+.menu-footer-navigation-container {
+  display: inline-block;
+}
+
 @media screen and (min-width: $screen-sm) {
   .footer-disclaimer__content {
     position: relative;

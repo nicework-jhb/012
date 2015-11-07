@@ -17,7 +17,7 @@
   <div class="entry-summary">
     <?php the_excerpt();  ?>
   </div>
-  <div class="entry-link">
+  <div class="entry-link clearfix">
     <a href="<?php the_permalink(); ?>" class="btn btn-012 pull-right">More</a>
   </div>
 </article>

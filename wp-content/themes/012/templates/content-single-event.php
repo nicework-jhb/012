@@ -9,6 +9,7 @@
       <?php
     }
     ?>
+    <div class="fim-block"></div>
   </div>
 
   <div class="content-single container-fluid">
@@ -32,11 +33,9 @@
         <div class="col-md-4">
           <div class="event-sidebar">
             <?php dynamic_sidebar('event-sidebar'); ?>
-            <form class="form">
-              <?php if (function_exists('mc4wp_form')) {
-                mc4wp_form();
-              } ?>
-            </form>
+            <div class="newsletter-form">
+              <?php echo do_shortcode('[contact-form-7 id="118" title="Newsletter Signup"]'); ?>
+            </div>
           </div>
         </div>
       </div>

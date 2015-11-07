@@ -27,7 +27,8 @@ function setup() {
   // Register wp_nav_menu() menus
   // http://codex.wordpress.org/Function_Reference/register_nav_menus
   register_nav_menus([
-    'primary_navigation' => __('Primary Navigation', 'sage')
+    'primary_navigation' => __('Primary Navigation', 'sage'),
+    'footer_navigation' => __('Footer Navigation', 'sage')
   ]);
 
   // Enable post thumbnails
@@ -46,6 +47,19 @@ function setup() {
 
   // Custom stylesheet for visual editor
   add_editor_style(Assets\asset_path('styles/main.css'));
+
+  // custom thumbnail size for gallery page
+  add_theme_support( 'post-thumbnails' ); // This feature enables post-thumbnail support for a theme
+  // To enable only for posts:
+  //add_theme_support( 'post-thumbnails', array( 'post' ) );
+  // To enable only for posts and custom post types:
+  //add_theme_support( 'post-thumbnails', array( 'post', 'movie' ) );
+
+  // Register a new image size.
+  // This means that WordPress will create a copy of the post image with the specified dimensions
+  // when you upload a new image. Register as many as needed.
+  // Adding custom image sizes (name, width, height, crop)
+  add_image_size( 'gallery-thumbnail', 9999, 180, false );
 }
 add_action('after_setup_theme', __NAMESPACE__ . '\\setup');
 
@@ -227,6 +241,33 @@ function theme012_customize_register( $wp_customize ) {
       'section'    => 'theme012_social_links',
       'settings'   => 'instagram',
   ));
+
+  $wp_customize->add_section( 'theme012_footer_static_content' , array(
+      'title'      => __( 'Footer Static Content', 'theme012' ),
+      'priority'   => 30,
+  ) );
+
+  $wp_customize->add_setting( 'copyright' , array(
+      'default'     => '012 Central, All rights reserved',
+      'transport'   => 'refresh',
+  ));
+
+  $wp_customize->add_control('footer_copyright', array(
+      'label'        => __( 'Footer Copyright', 'theme012' ),
+      'section'    => 'theme012_footer_static_content',
+      'settings'   => 'copyright',
+  ));
+
+  $wp_customize->add_setting( 'address' , array(
+      'default'     => '385 Helen Joseph Street. Pretoria.',
+      'transport'   => 'refresh',
+  ));
+
+  $wp_customize->add_control('footer_address', array(
+      'label'        => __( 'Footer Address', 'theme012' ),
+      'section'    => 'theme012_footer_static_content',
+      'settings'   => 'address',
+  ));
 }
 add_action( 'customize_register', __NAMESPACE__ . '\\theme012_customize_register' );
 
@@ -242,3 +283,19 @@ function custom_admin_styles() {
   }
 }
 add_action('admin_head', __NAMESPACE__ . '\\custom_admin_styles');
+
+//adding custom gallery thumbnail image size to backend
+function custom_image_sizes_choose( $sizes ) {
+  $custom_sizes = array(
+      'gallery-thumbnail' => 'Gallery Thumbnail'
+  );
+  return array_merge( $sizes, $custom_sizes );
+}
+
+add_filter( 'image_size_names_choose', __NAMESPACE__ . '\\custom_image_sizes_choose' );
+
+//adding tags to images for isotope
+function wptp_add_tags_to_attachments() {
+  register_taxonomy_for_object_type( 'post_tag', 'attachment' );
+}
+add_action( 'init' , __NAMESPACE__ . '\\wptp_add_tags_to_attachments' );

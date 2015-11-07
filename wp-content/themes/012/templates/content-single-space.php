@@ -9,6 +9,7 @@
       <?php
     }
     ?>
+    <div class="fim-block"></div>
   </div>
 
   <div class="content-single container-fluid">
@@ -53,11 +54,11 @@
       ?>
       <?php if (!empty($thumbnails)) { ?>
         <h4>Gallery</h4>
-        <div class="ps-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+        <div class="ps-gallery slick-gallery" itemscope itemtype="http://schema.org/ImageGallery">
           <?php $key = 0; ?>
           <?php foreach ($thumbnailArray as $image) { ?>
             <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-              <a href="<?php echo $fullUrlsArray[$key]; ?>" itemprop="contentUrl" data-size="">
+              <a href="<?php echo $fullUrlsArray[$key]; ?>" itemprop="contentUrl" data-size="<?php echo getimagesize($fullUrlsArray[$key])[0]; ?>x<?php echo getimagesize($fullUrlsArray[$key])[1]; ?>">
                 <?php echo explode('/>', $image)[0] . 'itemprop="thumbnail" data-image-url="' . $fullUrlsArray[$key] . '" />'; ?></a>
             </figure>
             <?php $key++; ?>

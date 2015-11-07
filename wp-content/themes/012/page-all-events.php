@@ -6,6 +6,7 @@
         ?>
           <div class="image-container"><img src="<?php echo $thumbnail_url[0] ?>" alt="<?php echo the_title_attribute('echo=0'); ?>"/></div>
         <?php }?>
+      <div class="fim-block"></div>
       <div class="post__featured-image-text"><?php the_content(); ?></div>
     </div>
     <div class="content-single container-fluid">
@@ -27,7 +28,7 @@
     <div class="container">
       <?php if (!have_posts()) : ?>
         <div class="alert alert-warning">
-          <?php _e('Sorry, no results were found.', 'sage'); ?>
+          <?php _e('Sorry, no events were found.', 'sage'); ?>
         </div>
       <?php endif; ?>
       <?php $colCount = 0; ?>
@@ -44,7 +45,8 @@
         <?php } ?>
       <?php endwhile; ?>
       <?php if ($colCount % 3 != 0) { ?>
+        </div>
+      <?php } ?>
     </div>
-    <?php } ?>
   </div>
 </div>

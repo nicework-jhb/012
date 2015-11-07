@@ -11,7 +11,9 @@
     "jquery-backstretch": "~2.0.4",
     "font-awesome": "~4.4.0",
     "photoswipe": "~4.1.0",
-    "slick-carousel": "~1.5.8"
+    "slick-carousel": "~1.5.8",
+    "isotope": "~2.2.2",
+    "isotope-packery": "~1.1.3"
   },
   "overrides": {
     "bootstrap-sass": {
@@ -48,6 +50,18 @@
         "slick/slick.css",
         "slick/fonts/*"
       ]
+    },
+    "packery": {
+      "main": [
+        "./dist/packery.pkgd.min.js"
+      ],
+      "dependencies": {}
+    },
+    "isotope": {
+      "main": [
+        "./dist/isotope.pkgd.min.js"
+      ],
+      "dependencies": {}
     }
   }
 }

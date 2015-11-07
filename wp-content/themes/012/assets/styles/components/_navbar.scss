@@ -1,12 +1,10 @@
 @mixin navbar-color-custom($color, $offset, $opacity) {
+  border-color: rgba($color, $opacity);
   a {
     background-color: $color;
     &:hover {
     background-color: lighten($color, $offset);
     }
-  }
-  .sub-menu {
-    background-color: rgba($color, $opacity);
   }
 }
 

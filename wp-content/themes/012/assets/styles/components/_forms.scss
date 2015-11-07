@@ -40,10 +40,11 @@
   }
 }
 
-.newsletter-form button {
+.newsletter-form .btn {
   float: left;
   width: 40%;
   padding: 2px;
+  background-color: $red-012 !important;
   @media screen and (min-width: $screen-xs) {
     width: 30%;
   }
@@ -81,4 +82,14 @@
   background-color: $red-012;
   font-weight: normal;
   font-size: 0.8em !important;
+}
+
+.newsletter-form p {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.newsletter-form .wpcf7-response-output {
+  margin: 20px 0 30px 0;
+  width: 100%;
 }
