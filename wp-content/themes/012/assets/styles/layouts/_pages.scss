@@ -1,0 +1,180 @@
+.main-content {
+  background-color: #fff;
+  padding-bottom: 20px;
+}
+
+.thumbnail-block article header {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.thumbnail-block article header img {
+  width: 100%;
+}
+
+.thumbnail-block article header .thumbnail-title {
+  position: absolute;
+  bottom: 5px;
+  display: block;
+  width: 96%;
+  right: 2%;
+  left: 2%;
+  text-align: right;
+  padding-right: 50px;
+  padding-top: 10px;
+  overflow: hidden;
+  line-height: normal;
+}
+
+.thumbnail-block article header .thumbnail-title:before,
+.thumbnail-block article header .thumbnail-title:after {
+  content: '';
+  position: absolute;
+  bottom: 0.8em;
+  border-left: 6px solid #fff;
+  height: 24px;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.thumbnail-block article header .thumbnail-title:before {
+  left: 0;
+}
+
+.thumbnail-block article header .thumbnail-title:after {
+  right: 0;
+}
+
+.thumbnail-block article header:hover .thumbnail-title:before,
+.thumbnail-block article header:hover .thumbnail-title:after {
+  border-color: $red-012;
+}
+
+.thumbnail-block article header .thumbnail-title a {
+  display: inline-block;
+  position: relative;
+  color: #fff !important;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 1.4em;
+  white-space: nowrap;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.thumbnail-block article header:hover {
+  cursor: pointer;
+}
+
+.thumbnail-block article header:hover .thumbnail-title a {
+  color: $red-012 !important;
+}
+
+.thumbnail-block article header .thumbnail-title a:hover,
+.thumbnail-block article header .thumbnail-title a:focus,
+.thumbnail-block article header .thumbnail-title a:active {
+  text-decoration: none;
+}
+
+.thumbnail-block article header .thumbnail-title a:before,
+.thumbnail-block article header .thumbnail-title a:after {
+  content: "";
+  position: absolute;
+  height: 5px;
+  border-bottom: 6px solid #fff;
+  top: 0.8em;
+  width: 600px;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.thumbnail-block article header .thumbnail-title a:before {
+  right: 100%;
+  margin-right: 15px;
+}
+
+.thumbnail-block article header .thumbnail-title a:after {
+  left: 100%;
+  margin-left: 15px;
+}
+
+.thumbnail-block article header:hover .thumbnail-title a:before,
+.thumbnail-block article header:hover .thumbnail-title a:after {
+  border-color: $red-012 !important;
+}
+
+.entry-summary {
+  margin-bottom: 30px;
+  min-height: 60px;
+}
+
+.entry-link {
+  margin-bottom: 30px;
+}
+
+.hentry p {
+  margin-bottom: 30px;
+}
+
+.hentry ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 30px;
+}
+
+.hentry ul li {
+  margin: 0 0 1em 0;
+}
+
+.hentry ul li:before {
+  font-family: FontAwesome;
+  content: '\f054';
+  color: $red-012;
+  margin-right: 20px;
+}
+
+.contact-form {
+  color: #fff;
+  background-color: $yellow-012;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.contact-form h5 {
+  color: #fff !important;
+}
+
+#contact .google-maps {
+  margin-bottom: 30px;
+}
+
+//custom page colours
+#about {
+  .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6, a, .hentry ul li:before {
+    color: $orange-012;
+  }
+}
+
+#spaces {
+  .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6, a, .hentry ul li:before {
+    color: $red-012;
+  }
+}
+
+#events {
+  .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6, a, .hentry ul li:before {
+    color: $turquoise-012;
+  }
+}
+
+#contact {
+  .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6, a, .hentry ul li:before {
+    color: $yellow-012;
+  }
+}
+
+#page {
+  .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6, a, .hentry ul li:before {
+    color: $blue-012;
+  }
+}

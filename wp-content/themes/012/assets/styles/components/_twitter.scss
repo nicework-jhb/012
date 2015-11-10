@@ -1,0 +1,28 @@
+.tweet {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.tweet h5 {
+  margin-top: 0;
+  text-transform: capitalize;
+  font-weight: 500;
+  span {
+    font-weight: 300;
+  }
+}
+
+.tweet__profile-pic {
+  width: 100px;
+  float: left;
+  padding: 0 20px 10px 0;
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.tweet__text {
+  font-size: 0.9em;
+  font-weight: 300;
+}

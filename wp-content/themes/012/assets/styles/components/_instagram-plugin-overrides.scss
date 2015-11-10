@@ -1,0 +1,100 @@
+$screen-instagram-xs: 481px;
+$screen-instagram-sm: 641px;
+
+
+#sb_instagram {
+  position: relative;
+  padding-bottom: 100%;
+  margin-bottom: 30px;
+  @media screen and (min-width: $screen-instagram-xs) {
+    padding-bottom: 0;
+
+  }
+}
+
+#sb_instagram.sbi_col_6 #sbi_images .sbi_item {
+  padding: 0 0 20px 0 !important;
+  @media screen and (min-width: $screen-xs) {
+    padding: 0 20px 20px 0 !important;
+  }
+}
+
+#sb_instagram.sbi_col_6 #sbi_images .sbi_item img {
+  min-width: 100%;
+}
+
+#sb_instagram #sbi_load {
+  position: absolute;
+  height: 16.66%;
+  width: 100%;
+  padding-bottom: 20px;
+  bottom: 0;
+  right: 0;
+  @media screen and (min-width: $screen-instagram-xs) {
+    height: 33.33%;
+    width: 50%;
+  }
+  @media screen and (min-width: $screen-instagram-sm) {
+    height: 100%;
+    width: 16.66%;
+  }
+}
+
+#sb_instagram .sbi_follow_btn {
+  display: table;
+  width: 100%;
+  margin: 0 !important;
+  height: calc(100% - 20px);
+  &:before {
+    content: '\f16d';
+    font-family: FontAwesome;
+    font-size: 6em;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    width: 100%;
+    @media screen and (min-width: $screen-instagram-xs) {
+      font-size: 4em;
+    }
+
+    @media screen and (min-width: $screen-instagram-sm) {
+      font-size: 2em;
+    }
+
+    @media screen and (min-width: $screen-md) {
+      font-size: 4em;
+    }
+  }
+}
+
+#sb_instagram .sbi_follow_btn a {
+  @extend .btn-012;
+  display: block;
+  margin: 0;
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  font-size: 1.6em;
+
+  @media screen and (min-width: $screen-instagram-xs) {
+    font-size: 1.2em;
+  }
+
+  @media screen and (min-width: $screen-instagram-sm) {
+    font-size: 0.8em;
+  }
+
+  @media screen and (min-width: $screen-md) {
+    font-size: 1.2em;
+  }
+}
+
+#sb_instagram .sbi_follow_btn a i {
+  display: none;
+}
+
+#sb_instagram .sbi_follow_btn a:hover, #sb_instagram .sbi_follow_btn a:focus, #sb_instagram #sbi_load .sbi_load_btn:hover, #sb_instagram #sbi_load .sbi_load_btn:focus {
+  opacity: 1;
+}

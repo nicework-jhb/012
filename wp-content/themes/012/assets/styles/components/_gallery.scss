@@ -1,0 +1,32 @@
+.filter-button-group {
+  list-style: none;
+  text-align: center;
+  background-color: $green-012;
+  padding-left: 0;
+  padding-top: 50px;
+  margin-bottom: 0;
+  @media screen and (min-width: $screen-sm) {
+    padding-left: 140px;
+    padding-top: 0;
+  }
+}
+
+.filter-button-group li {
+  display: inline-block;
+  color: #fff;
+  padding: 15px;
+  cursor: pointer;
+  font-family: district-pro,sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 1em;
+  text-transform: uppercase;
+}
+
+.filter-button-group li.active {
+  font-weight: 900;
+}
+
+.isotope-gallery {
+  margin: 0 10px 30px 10px;
+}
