@@ -36,7 +36,7 @@
 }
 
 .navbar-012 .navbar-toggle + .brand img {
-  left: 10px;
+  margin-left: 10px;
   @media screen and (max-width: $screen-sm) {
     width: 60px;
     top: 10px;
@@ -62,7 +62,6 @@
 
 .navbar-012 .menu-primary-navigation-container {
   @media screen and (min-width: $screen-sm) {
-    display: table;
     table-layout: fixed;
     width: 100%;
     padding-left: 140px;
@@ -70,13 +69,10 @@
 }
 
 .navbar-012 .navbar-nav {
-  background-color: #333;
+  background-color: $blue-012;
   margin-top: 0;
   margin-bottom: 0;
   @media screen and (min-width: $screen-sm) {
-    width: 100%;
-    display: table-row;
-    float: none;
     &:before, &:after {
       content: normal;
     }
@@ -85,9 +81,8 @@
 
 .navbar-012 .navbar-nav li {
   @media screen and (min-width: $screen-sm) {
-    display: table-cell;
+    display: inline-block;
     text-align: center;
-    float: none;
     padding: 0;
     margin: 0;
   }
@@ -102,7 +97,15 @@
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
   @media screen and (min-width: $screen-sm) {
-    padding: 15px 5px;
+    padding: 15px 7px;
+  }
+
+  @media screen and (min-width: $screen-md) {
+    padding: 15px 25px;
+  }
+
+  @media screen and (min-width: $screen-lg) {
+    padding: 15px 40px;
   }
 }
 

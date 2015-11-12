@@ -221,13 +221,18 @@
     var fimElement = ($('.navbar-012 .navbar-nav > .current-menu-item').length > 0) ?
         $('.navbar-012 .navbar-nav > .current-menu-item') :
         $('.navbar-012 .navbar-nav > .current-menu-ancestor');
-    var fimColour = fimElement.css('border-color'),
-        fimWidth = fimElement.outerWidth(),
-        fimOffsetLeft = fimElement.offset().left;
-    $('.post__featured-image .fim-block').css('background-color', fimColour);
-    $('.post__featured-image .fim-block').css('width', fimWidth);
-    $('.post__featured-image .fim-block').css('left', fimOffsetLeft);
-  }
+    var fimBlock = $('.post__featured-image .fim-block');
+    console.log(fimElement.length);
+    console.log(fimBlock.length);
+    if (fimElement.length > 0 && fimBlock.length > 0) {
+      var fimColour = fimElement.css('border-color'),
+          fimWidth = fimElement.outerWidth(),
+          fimOffsetLeft = fimElement.offset().left;
+      fimBlock.css('background-color', fimColour);
+      fimBlock.css('width', fimWidth);
+      fimBlock.css('left', fimOffsetLeft);
+    }
+  };
 
   // Use this variable to set up the common and page specific functions. If you
   // rename this variable, you will also need to rename the namespace below.
@@ -287,6 +292,23 @@
             }
           ]
         });
+
+        try{
+          Typekit.load({
+            async: true,
+            loading: function() {
+              // JavaScript to execute when fonts start loading
+            },
+            active: function() {
+              // JavaScript to execute when fonts become active
+              setFimSize();
+            },
+            inactive: function() {
+              // JavaScript to execute when fonts become inactive
+              setFimSize();
+            }
+          });
+        }catch(e){}
       }
     },
     // Home page
@@ -322,7 +344,7 @@
           $(this).addClass('active');
           var filterValue = $(this).attr('data-filter');
           $('.isotope-gallery').isotope({ filter: filterValue });
-          initPhotoSwipeFromDOM('.ps-gallery') //reinitialise photoswipe gallery
+          initPhotoSwipeFromDOM('.ps-gallery'); //reinitialise photoswipe gallery
         });
       }
     }
@@ -362,4 +384,3 @@
   $(document).ready(UTIL.loadEvents);
 
 })(jQuery); // Fully reference jQuery after this point.
-
