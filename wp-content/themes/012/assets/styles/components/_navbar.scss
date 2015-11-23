@@ -116,27 +116,27 @@
 }
 
 .navbar-012 .navbar-nav > li:nth-child(5n+1) {
-  @include navbar-color-custom($orange-012, 5%, 0.2);
+  @include navbar-color-custom($orange-012, 5%, 0.7);
 }
 
 .navbar-012 .navbar-nav > li:nth-child(5n+2) {
-  @include navbar-color-custom($red-012, 5%, 0.2);
+  @include navbar-color-custom($red-012, 5%, 1);
 }
 
 .navbar-012 .navbar-nav > li:nth-child(5n+3) {
-  @include navbar-color-custom($turquoise-012, 5%, 0.2);
+  @include navbar-color-custom($turquoise-012, 5%, 1);
 }
 
 .navbar-012 .navbar-nav > li:nth-child(5n+4) {
-  @include navbar-color-custom($green-012, 5%, 0.2);
+  @include navbar-color-custom($green-012, 5%, 1);
 }
 
 .navbar-012 .navbar-nav > li:nth-child(5n+5) {
-  @include navbar-color-custom($yellow-012, 5%, 0.2);
+  @include navbar-color-custom($yellow-012, 5%, 1);
 }
 
 .navbar-012 .navbar-nav > li:last-child {
-  @include navbar-color-custom($blue-012, 5%, 0.2);
+  @include navbar-color-custom($blue-012, 5%, 1);
 }
 
 .navbar-012 .sub-menu {

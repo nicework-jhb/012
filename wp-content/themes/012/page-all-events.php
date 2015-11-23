@@ -4,10 +4,14 @@
       <?php if (has_post_thumbnail()) {
         $thumbnail_url = wp_get_attachment_image_src(get_post_thumbnail_id(), 'large');
         ?>
-          <div class="image-container"><img src="<?php echo $thumbnail_url[0] ?>" alt="<?php echo the_title_attribute('echo=0'); ?>"/></div>
-        <?php }?>
+        <div class="image-container"><img src="<?php echo $thumbnail_url[0] ?>" alt="<?php echo the_title_attribute('echo=0'); ?>"/></div>
+      <?php } ?>
       <div class="fim-block"></div>
-      <div class="post__featured-image-text"><?php the_content(); ?></div>
+      <div class="post__featured-image-text">
+        <div class="container">
+          <?php the_content(); ?>
+        </div>
+      </div>
     </div>
     <div class="content-single container-fluid">
       <div class="container">
@@ -45,8 +49,8 @@
         <?php } ?>
       <?php endwhile; ?>
       <?php if ($colCount % 3 != 0) { ?>
-        </div>
-      <?php } ?>
     </div>
+    <?php } ?>
   </div>
+</div>
 </div>
