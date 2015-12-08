@@ -23,24 +23,23 @@
 </div>
 
 <?php query_posts(['post_type' => 'friend']); ?>
+<?php if (have_posts()) : ?>
+  <div class="container-fluid main-content">
+    <div class="container">
+      <h5>We have quite a lot of friends</h5>
 
-<div class="container-fluid main-content">
-  <div class="container">
-    <h5>We have quite a lot of friends</h5>
-    <?php if (!have_posts()) : ?>
-      <div class="alert alert-warning">
-        <?php _e('Sorry, no results were found.', 'sage'); ?>
+      <div class="slick-friends">
+        <?php while (have_posts()) : the_post(); ?>
+          <div class="friend">
+            <?php get_template_part('templates/content', get_post_type() != 'post' ? get_post_type() : get_post_format()); ?>
+          </div>
+        <?php endwhile; ?>
+
+
       </div>
-    <?php endif; ?>
-    <div class="slick-friends">
-      <?php while (have_posts()) : the_post(); ?>
-        <div class="friend">
-          <?php get_template_part('templates/content', get_post_type() != 'post' ? get_post_type() : get_post_format()); ?>
-        </div>
-      <?php endwhile; ?>
     </div>
   </div>
-</div>
+<?php endif; ?>
 <?php query_posts('page_id=' . $postId); ?>
 <?php while (have_posts()) : the_post(); ?>
   <div class="container-fluid main-content">
@@ -48,11 +47,13 @@
       <div class="row">
         <div class="col-md-6">
           <h5><?php echo types_render_field("map-title", array()); ?></h5>
+
           <p><?php echo types_render_field("map-description", array()); ?></p>
-          <p><?php echo types_render_field("map-key", array("class"=>"img-responsive")); ?></p>
+
+          <p><?php echo types_render_field("map-key", array("class" => "img-responsive")); ?></p>
         </div>
         <div class="col-md-6">
-          <p><?php echo types_render_field("map-image", array("class"=>"img-responsive pull-right")); ?></p>
+          <p><?php echo types_render_field("map-image", array("class" => "img-responsive pull-right")); ?></p>
         </div>
       </div>
     </div>

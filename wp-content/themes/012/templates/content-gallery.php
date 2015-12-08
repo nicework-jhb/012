@@ -16,7 +16,7 @@ if (preg_match_all('/' . $pattern . '/s', $post->post_content, $matches)) {
 }
 
 if ($ids) { ?>
-
+  <?php shuffle($ids); ?>
   <?php foreach ($ids as $id) { ?>
     <?php
     $temp_tags = get_the_tags($id);

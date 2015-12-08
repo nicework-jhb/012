@@ -2,7 +2,6 @@ body {
   font-family: $district-pro;
   font-weight: 500 !important;
   font-style: normal;
-  line-height: 1em;
 }
 
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
@@ -75,4 +74,12 @@ body {
 
 .margin-bottom {
   margin-bottom: 30px;
+}
+
+.container-small {
+  width: 850px;
+}
+
+.no-upper {
+  text-transform: none !important;
 }

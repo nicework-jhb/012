@@ -75,9 +75,12 @@
           </div>
         </div>
       </div>
-      <div class="col-md-2 text-center"><a href="http://www.cityproperty.co.za/" target="_blank"><img
+      <div class="col-md-2 text-center">
+        <a href="http://www.cityproperty.co.za/" target="_blank"><img
               src="<?php echo get_template_directory_uri(); ?>/assets/images/city-property-logo.jpg"
-              alt="City Property Logo"/></a></div>
+              alt="City Property Logo"/></a><br/>
+        <a href="http://www.nicework.co.za/">Made by Nicework</a>
+      </div>
     </div>
   </div>
 </footer>

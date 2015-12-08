@@ -26,3 +26,11 @@
   font-size: 0.9em;
   font-weight: 300;
 }
+
+.tweet__text a {
+  color: #fff;
+  text-decoration: underline;
+  &:hover {
+    color: #fff;
+  }
+}

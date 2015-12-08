@@ -22,7 +22,6 @@
   position: absolute;
   top: 0;
   height: 100%;
-
   mix-blend-mode: overlay;
   @media screen and (max-width: $screen-sm) {
     background: rgba(#000, 1) !important;
@@ -35,8 +34,10 @@
   height: 100%;
   position: absolute;
   top: 0;
-  background-color: rgba(#000, 1);
+  mix-blend-mode: normal;
+  background-color: rgba(#000, 0.5);
   width: 9999px;
+
 }
 
 .post__featured-image .fim-block:before {

@@ -27,3 +27,9 @@
 #spaces { .btn-012 { background-color: $red-012; &:hover { background-color: lighten($red-012, 5%); } } }
 #events { .btn-012 { background-color: $turquoise-012; &:hover { background-color: lighten($turquoise-012, 5%); } } }
 #contact { .btn-012 { background-color: $yellow-012; &:hover { background-color: lighten($yellow-012, 5%); } } }
+
+.enquire-block .btn-012 {
+  font-size: 0.9em;
+  font-weight: normal;
+  text-align: center;
+}

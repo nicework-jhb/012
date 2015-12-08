@@ -1,14 +1,95 @@
 .enquire-block {
+  position: relative;
   float: right;
   background-color: $red-012;
   color: #fff;
   text-align: center;
-  padding: 20px;
-  max-width: 160px;
+  width: 100%;
   h5 {
     color: #fff !important;
   }
 }
+
+.enquire-block__image {
+  display: block;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  max-height: 240px;
+}
+
+.enquire-block__background {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  mix-blend-mode: overlay;
+  background-color: $red-012;
+}
+
+.enquire-block__text {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 15px;
+  right: 15px;
+  padding: 20px 0;
+  font-size: 4em;
+  color: #fff;
+  display: table-cell;
+  vertical-align: middle;
+  text-transform: uppercase;
+  color: #fff;
+
+  @media screen and (max-width: $screen-lg) {
+    font-size: 3em;
+  }
+
+  @media screen and (max-width: $screen-md) {
+    font-size: 2em;
+  }
+
+  @media screen and (max-width: $screen-sm) {
+    font-size: 4em;
+  }
+
+  @media screen and (max-width: $screen-xs) {
+    font-size: 2em;
+  }
+}
+
+.enquire-block__text a {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+}
+
+.enquire-block__text a span {
+  color: #fff;
+  padding: 0 20px;
+}
+
+.enquire-block__text hr {
+  border-width: 6px;
+  @media screen and (max-width: $screen-md) {
+    border-width: 4px;
+  }
+
+  @media screen and (max-width: $screen-sm) {
+    border-width: 6px;
+  }
+
+  @media screen and (max-width: $screen-xs) {
+    border-width: 4px;
+  }
+}
+
+.enquire-block__text a:hover,
+.enquire-block__text a:focus {
+  text-decoration: none !important;
+}
+
 
 .event-sidebar {
   background-color: $turquoise-012;

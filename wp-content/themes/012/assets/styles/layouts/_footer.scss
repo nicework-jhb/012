@@ -86,6 +86,15 @@ footer a:focus {
   display: block;
   margin: 0 -15px -15px -15px;
   padding: 20px 20px 40px 20px;
+  font-size: 0.7em;
+}
+
+.footer-disclaimer a {
+  color: #fff;
+  &:hover {
+    color: #fff;
+    text-decoration: underline;
+  }
 }
 
 .footer-disclaimer__content {
@@ -98,7 +107,7 @@ footer a:focus {
 }
 
 .footer-disclaimer__content-text {
-  font-size: 0.7em;
+
 }
 
 .menu-footer-navigation-container {

@@ -9,7 +9,6 @@
       <?php
     }
     ?>
-    <div class="fim-block"></div>
   </div>
 
   <div class="content-single container-fluid">
@@ -22,7 +21,7 @@
           <article <?php post_class(); ?>>
             <h4>Date: <span style="font-weight: normal;"><?php echo types_render_field("date", array()); ?></span></h4>
             <h4>Time: <span style="font-weight: normal;"><?php echo types_render_field("time", array()); ?></span></h4>
-            <h4>Address: <a href="<?php echo types_render_field("venue-link", array()); ?>" style="font-weight: normal;"><?php echo types_render_field("venue-name", array()); ?></a></h4>
+            <h4>Address: <span style="font-weight: normal;"><?php echo types_render_field("venue-link", array('title' => types_render_field("venue-name", array()))); ?></span></h4>
             <div class="entry-content">
               <?php the_content(); ?>
             </div>

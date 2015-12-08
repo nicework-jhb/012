@@ -3,7 +3,6 @@
 }
 
 .slick-slide {
-  padding: 0 5px;
   outline: none;
 }
 
@@ -21,7 +20,8 @@
   border: none;
   outline: 0;
   background: 0 0;
-  background-color: rgba($red-012, 0.5);
+  background-color: rgba($red-012, 0.6);
+
   text-align: center;
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
@@ -41,14 +41,14 @@
 }
 
 .slick-next {
-  right: 5px;
+  right: 8px;
   &:before {
     content: '\f054';
   }
 }
 
 .slick-prev {
-  left: 5px;
+  left: 8px;
   z-index: 1;
   &:before {
     content: '\f053';
@@ -89,4 +89,9 @@
 
 .slick-friends .slick-prev {
   left: -40px;
+}
+
+//space gallery thumbnails
+.space-gallery-thumbnail {
+  padding: 0 8px;
 }

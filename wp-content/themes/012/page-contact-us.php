@@ -24,7 +24,7 @@
           </div>
           <div class="col-md-4">
             <div class="margin-bottom">
-              <h5 style="color: #000;"><?php echo types_render_field("maps-details", array()); ?></h5>
+              <div class="contact-address"><?php echo types_render_field("maps-details", array()); ?></div>
               <a href="<?php echo types_render_field("maps-download", array()); ?>" class="btn btn-012">Download Map</a>
             </div>
           </div>

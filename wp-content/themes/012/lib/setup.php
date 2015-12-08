@@ -275,11 +275,18 @@ add_action( 'customize_register', __NAMESPACE__ . '\\theme012_customize_register
 function custom_admin_styles() {
   $about = array(18);
   $contact = array(23);
-
+  //force hide on other pages
   if (get_post_type() == 'page' && !in_array(get_the_ID(), $about)) {   //* about page
     echo '<style type="text/css"> #wpcf-group-about-page-map {display:none;} </style>';
-  } else if (get_post_type() == 'page' && !in_array(get_the_ID(), $contact)) {   //* about page
+  } else if (get_post_type() == 'page' && !in_array(get_the_ID(), $contact)) {   //* contact page
     echo '<style type="text/css"> #wpcf-group-contact-information {display:none;} </style>';
+  }
+
+  //force show in this page
+  if (get_post_type() == 'page' && in_array(get_the_ID(), $about)) {   //* about page
+    echo '<style type="text/css"> #wpcf-group-about-page-map {display:block;} </style>';
+  } else if (get_post_type() == 'page' && in_array(get_the_ID(), $contact)) {   //* contact page
+    echo '<style type="text/css"> #wpcf-group-contact-information {display:block;} </style>';
   }
 }
 add_action('admin_head', __NAMESPACE__ . '\\custom_admin_styles');

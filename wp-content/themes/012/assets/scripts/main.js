@@ -222,8 +222,6 @@
         $('.navbar-012 .navbar-nav > .current-menu-item') :
         $('.navbar-012 .navbar-nav > .current-menu-ancestor');
     var fimBlock = $('.post__featured-image .fim-block');
-    console.log(fimElement.length);
-    console.log(fimBlock.length);
     if (fimElement.length > 0 && fimBlock.length > 0) {
       var fimColour = fimElement.css('border-color'),
           fimWidth = fimElement.outerWidth(),

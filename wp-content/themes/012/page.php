@@ -8,14 +8,14 @@
       <?php }?>
     </div>
     <div class="content-single container-fluid">
-      <div class="container">
+      <div class="container container-small">
         <?php get_template_part('templates/page', 'header'); ?>
       </div>
     </div>
   <?php endwhile; ?>
 
   <div class="container-fluid main-content">
-    <div class="container">
+    <div class="container container-small">
       <?php while (have_posts()) : the_post(); ?>
         <?php get_template_part('templates/content', 'page'); ?>
       <?php endwhile; ?>
